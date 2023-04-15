@@ -10,9 +10,13 @@ class DeviceLogsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $logs = DeviceLogs::all();
+        if($request->patrimony) {
+            $logs = DeviceLogs::where('patrimony', '=', $request->patrimony)->get();
+        } else {
+            $logs = DeviceLogs::all();
+        }
 
         return view('dashboard', ['logs' => $logs]);
     }
@@ -63,12 +67,5 @@ class DeviceLogsController extends Controller
     public function destroy(DeviceLogs $deviceLogs)
     {
         //
-    }
-
-    public function search(Request $request)
-    {
-        $device_logs = DeviceLogs::where('patrimony', 'like', '%'.$request->patrimony.'%')->get();
-        dd($device_logs);
-        return view();
     }
 }

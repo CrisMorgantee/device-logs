@@ -11,14 +11,20 @@
         <div class="min-h-screen bg-gray-50">
           <div class="rounded-md bg-white p-2">
             <div class="mb-2 flex items-center justify-between p-2">
-              <h2 class="text-xl font-bold text-gray-700">Gerenciamento de dispositivos</h2>
+              <h2 class="text-xl font-bold text-gray-700">Gerenciamento de Equipamentos</h2>
 
               <div class="flex items-center justify-between">
-                <form action="{{ route('dashboard.search') }}" method="post">
+                <form action="{{ route('dashboard.index') }}" method="post">
                   @csrf
-                  <input type="text" name="patrimony" class="rounded-md border-gray-300 py-1 px-4" />
-                  <x-primary-button class="ml-3">Buscar Dispositivo</x-primary-button>
+                  @method('GET')
+                  <x-text-input type="text" id="patrimony" class="py-1 px-4" name="patrimony"
+                    placeholder="Número do Patrimônio" required />
+                  <x-primary-button class="ml-3">Filtrar Equipamento</x-primary-button>
                 </form>
+                <a class="ml-4 rounded-md border border-slate-300 bg-slate-100 py-2 px-4 text-xs font-semibold uppercase"
+                  href="{{ route('dashboard.index') }}">
+                  Limpar Filtro
+                </a>
               </div>
             </div>
 

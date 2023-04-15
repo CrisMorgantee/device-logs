@@ -19,7 +19,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::post('/dashboard-search', [DeviceLogsController::class, 'search'])->middleware(['auth', 'verified'])->name('dashboard.search');
 Route::resource('/dashboard', DeviceLogsController::class)->middleware(['auth', 'verified'])->names('dashboard');
 
 Route::middleware('auth')->group(function () {

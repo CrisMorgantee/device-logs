@@ -15,7 +15,7 @@
 
     <!-- Password -->
     <div class="mt-4">
-      <x-input-label for="password" :value="__('Password')" />
+      <x-input-label for="password" :value="__('Senha')" />
 
       <x-text-input id="password" class="mt-1 block w-full" type="password" name="password" required
         autocomplete="current-password" />
@@ -42,7 +42,7 @@
       @endif
 
       <a href="{{ route('register') }}"
-        class="ml-4 font-semibold text-gray-700 hover:text-gray-900 focus:rounded-sm focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-700 dark:hover:text-gray-900">
+        class="ml-4 text-sm font-semibold text-gray-700 hover:text-gray-900 focus:rounded-sm focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-700 dark:hover:text-gray-900">
         Não tenho conta
       </a>
 

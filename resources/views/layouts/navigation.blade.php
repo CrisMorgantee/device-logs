@@ -6,7 +6,7 @@
         <!-- Logo -->
         <div class="flex shrink-0 items-center">
           <a href="{{ route('dashboard.index') }}">
-            <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+            <img class="h-10 w-10 fill-current text-gray-500" src="logo-icon.png" alt="">
           </a>
         </div>
 
@@ -37,9 +37,6 @@
           </x-slot>
 
           <x-slot name="content">
-            <x-dropdown-link :href="route('profile.edit')">
-              {{ __('Profile') }}
-            </x-dropdown-link>
 
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
@@ -48,7 +45,7 @@
               <x-dropdown-link :href="route('logout')"
                 onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                {{ __('Log Out') }}
+                {{ __('Sair') }}
               </x-dropdown-link>
             </form>
           </x-slot>
